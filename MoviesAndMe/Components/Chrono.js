@@ -5,17 +5,43 @@ class Chrono extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            count: 0,
+            seconds: 0,
+            ten_seconds: 0,
+            minutes: 0,
+            ten_minutes: 0,
+            hours: 0,
+            ten_hours: 0,
             cond: true,
             timer: 0,
             label_button: "Start"
         }
     }
-
+    set_right_time = () => {
+        if (this.state.seconds === 10) {
+            this.setState({seconds: 0});
+            this.setState({ten_seconds: this.state.ten_seconds + 1});
+        }
+        if (this.state.ten_seconds === 6) {
+            this.setState({ten_seconds: 0});
+            this.setState({minutes: this.state.minutes + 1});
+        }
+        if (this.state.minutes === 10) {
+            this.setState({minutes: 0});
+            this.setState({ten_minutes: this.state.ten_minutes + 1});
+        }
+        if (this.state.ten_minutes === 6) {
+            this.setState({ten_minutes: 0});
+            this.setState({hours: this.state.hours + 1});
+        }
+        if (this.state.hours === 10) {
+            this.setState({hours: 0});
+            this.setState({ten_hours: this.state.ten_hours + 1});
+        }
+    }
     chrono_start = () => {
         if (this.state.cond === true) {
             this.setState({timer: setInterval(() => {
-                this.setState({count: this.state.count + 1});
+                this.setState({seconds: this.state.seconds + 1});
             }, 1000)});
             this.setState({cond: false});
             this.setState({label_button: "Stop"});
@@ -25,11 +51,16 @@ class Chrono extends React.Component {
             this.setState({label_button: "Start"});
         }
     }
-
     render() {
+        this.set_right_time();
         return(
             <View style={styles.views}>
-                <Text style={styles.text}>{this.state.count}</Text>
+                <Text style={styles.text}>
+
+                    {this.state.ten_hours}{this.state.hours}:
+                    {this.state.ten_minutes}{this.state.minutes}:
+                    {this.state.ten_seconds}{this.state.seconds}
+                </Text>
                 <Button title={this.state.label_button} color="black" onPress={this.chrono_start} style={styles.buttons}/>
             </View>
         );
