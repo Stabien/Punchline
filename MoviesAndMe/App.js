@@ -1,21 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Search from './Components/Search.js'
+import Chrono from './Components/Chrono.js'
 
 export default function App() {
     return (
-        /*<View style={styles.container}>
-            <Text>Coucou !</Text>
-        </View>*/
-        <Search/>
+        //<Search/>
+        <Chrono/>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
