@@ -5,6 +5,8 @@ class Chrono extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            centi_seconds: 0,
+            deci_seconds: 0,
             seconds: 0,
             ten_seconds: 0,
             minutes: 0,
@@ -17,6 +19,14 @@ class Chrono extends React.Component {
         }
     }
     set_right_time = () => {
+        if (this.state.centi_seconds === 10) {
+            this.setState({centi_seconds: 0});
+            this.setState({deci_seconds: this.state.deci_seconds + 1});
+        }
+        if (this.state.deci_seconds === 10) {
+            this.setState({deci_seconds: 0});
+            this.setState({seconds: this.state.seconds + 1});
+        }
         if (this.state.seconds === 10) {
             this.setState({seconds: 0});
             this.setState({ten_seconds: this.state.ten_seconds + 1});
@@ -41,8 +51,10 @@ class Chrono extends React.Component {
     chrono_start = () => {
         if (this.state.cond === true) {
             this.setState({timer: setInterval(() => {
-                this.setState({seconds: this.state.seconds + 1});
-            }, 1000)});
+                this.setState({centi_seconds: this.state.centi_seconds + 1});
+                this.set_right_time();
+            }, 10)
+        });
             this.setState({cond: false});
             this.setState({label_button: "Stop"});
         } else {
@@ -52,14 +64,13 @@ class Chrono extends React.Component {
         }
     }
     render() {
-        this.set_right_time();
         return(
             <View style={styles.views}>
                 <Text style={styles.text}>
-
                     {this.state.ten_hours}{this.state.hours}:
                     {this.state.ten_minutes}{this.state.minutes}:
-                    {this.state.ten_seconds}{this.state.seconds}
+                    {this.state.ten_seconds}{this.state.seconds},
+                    {this.state.deci_seconds}{this.state.centi_seconds}
                 </Text>
                 <Button title={this.state.label_button} color="black" onPress={this.chrono_start} style={styles.buttons}/>
             </View>
