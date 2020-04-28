@@ -1,13 +1,27 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation-stack'
+import { createStackNavigator } from 'react-navigation-stack'
+import { createAppContainer } from 'react-navigation'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Chrono from './Chrono.js'
+import AudioPlayer from './AudioPlayer.js'
+import Search from './Search.js'
+import DisplayCategories from './DisplayCategories.js'
 
-const chrono_stack_navigator = createStackNavigator({
-    Chrono: {
-        screen: Chrono,
+const stack_navigator = createStackNavigator({
+    DisplayCategories: {
+        screen: DisplayCategories
+    },
+    AudioPlayer: {
+        screen: AudioPlayer,
         navigationOptions: {
-            title: "Chronomètre"
+            title: "Un nom random"
+        }
+    },
+    Search: {
+        screen: Search,
+        navigationOptions: {
+            title: "Search"
         }
     }
 });
 
-export default createAppContainer(chrono_stack_navigator)
+export default createAppContainer(stack_navigator)

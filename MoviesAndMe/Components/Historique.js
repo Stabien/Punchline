@@ -23,15 +23,15 @@ const styles = StyleSheet.create({
             alignItems: 'center',
             marginTop: Dimensions.get("window").height / 2 - 110
         }
-})
+});
 
 const screenWidth = Dimensions.get("window").width;
 const chartConfig = {
-    backgroundGradientFrom: "#1E2923",
+    backgroundGradientFrom: "#FFFFFF",
     backgroundGradientFromOpacity: 1,
-    backgroundGradientTo: "#08130D",
-    backgroundGradientToOpacity: 0.5,
-    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+    backgroundGradientTo: "#FFFFFF",
+    backgroundGradientToOpacity: 1,
+    color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
     strokeWidth: 2, // optional, default 3
     barPercentage: 0.5
 };

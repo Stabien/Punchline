@@ -5,56 +5,58 @@ class Chrono extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            centi_seconds: 0,
-            deci_seconds: 0,
-            seconds: 0,
-            ten_seconds: 0,
-            minutes: 0,
-            ten_minutes: 0,
-            hours: 0,
-            ten_hours: 0,
             cond: true,
             timer: 0,
-            label_button: "Start"
+            label_button: "Start",
+            refresh: true,
         }
+        this.centi_seconds = 0;
+        this.deci_seconds = 0;
+        this.seconds = 0;
+        this.ten_seconds = 0;
+        this.minutes = 0;
+        this.ten_minutes = 0;
+        this.hours = 0;
+        this.ten_hours = 0;
     }
     set_right_time = () => {
-        if (this.state.centi_seconds === 10) {
-            this.setState({centi_seconds: 0});
-            this.setState({deci_seconds: this.state.deci_seconds + 1});
+        if (this.centi_seconds === 10) {
+            this.centi_seconds = 0;
+            this.deci_seconds = this.deci_seconds + 1;
         }
-        if (this.state.deci_seconds === 10) {
-            this.setState({deci_seconds: 0});
-            this.setState({seconds: this.state.seconds + 1});
+        if (this.deci_seconds === 10) {
+            this.deci_seconds = 0;
+            this.seconds = this.seconds + 1;
         }
-        if (this.state.seconds === 10) {
-            this.setState({seconds: 0});
-            this.setState({ten_seconds: this.state.ten_seconds + 1});
+        if (this.seconds === 10) {
+            this.seconds = 0;
+            this.ten_seconds = this.ten_seconds + 1;
         }
-        if (this.state.ten_seconds === 6) {
-            this.setState({ten_seconds: 0});
-            this.setState({minutes: this.state.minutes + 1});
+        if (this.ten_seconds === 6) {
+            this.ten_seconds = 0;
+            this.minutes = this.minutes + 1;
         }
-        if (this.state.minutes === 10) {
-            this.setState({minutes: 0});
-            this.setState({ten_minutes: this.state.ten_minutes + 1});
+        if (this.minutes === 10) {
+            this.minutes = 0;
+            this.ten_minutes = this.ten_minutes + 1;
         }
-        if (this.state.ten_minutes === 6) {
-            this.setState({ten_minutes: 0});
-            this.setState({hours: this.state.hours + 1});
+        if (this.ten_minutes === 6) {
+            this.ten_minutes = 0;
+            this.hours = this.hours + 1;
         }
-        if (this.state.hours === 10) {
-            this.setState({hours: 0});
-            this.setState({ten_hours: this.state.ten_hours + 1});
+        if (this.hours === 10) {
+            this.hours = 0;
+            this.ten_hours = this.ten_hours + 1;
         }
     }
     chrono_start = () => {
         if (this.state.cond === true) {
             this.setState({timer: setInterval(() => {
-                this.setState({centi_seconds: this.state.centi_seconds + 1});
                 this.set_right_time();
-            }, 10)
-        });
+                this.setState({refresh: true});
+                this.centi_seconds = this.centi_seconds + 1;
+            }, 1000)
+            });
             this.setState({cond: false});
             this.setState({label_button: "Stop"});
         } else {
@@ -67,10 +69,10 @@ class Chrono extends React.Component {
         return(
             <View style={styles.views}>
                 <Text style={styles.text}>
-                    {this.state.ten_hours}{this.state.hours}:
-                    {this.state.ten_minutes}{this.state.minutes}:
-                    {this.state.ten_seconds}{this.state.seconds},
-                    {this.state.deci_seconds}{this.state.centi_seconds}
+                    {this.ten_hours}{this.hours}:
+                    {this.ten_minutes}{this.minutes}:
+                    {this.ten_seconds}{this.seconds},
+                    {this.deci_seconds}{this.centi_seconds}
                 </Text>
                 <Button title={this.state.label_button} color="black" onPress={this.chrono_start} style={styles.buttons}/>
             </View>
