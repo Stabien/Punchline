@@ -1,42 +1,42 @@
 export default data = [
     {
         id: 1,
-        name: 'Kaamelott'
+        name: 'Test'
     },
     {
         id: 2,
-        name: 'Amis'
+        name: 'Test'
     },
     {
         id: 3,
-        name: 'Amis'
+        name: 'Test'
     },
     {
         id: 4,
-        name: 'Amis'
+        name: 'Test'
     },
     {
         id: 5,
-        name: 'Amis'
+        name: 'Test'
     },
     {
         id: 6,
-        name: 'Amis'
+        name: 'Test'
     },
     {
         id: 7,
-        name: 'Amis'
+        name: 'Test'
     },
     {
         id: 8,
-        name: 'Amis'
+        name: 'Test'
     },
     {
         id: 9,
-        name: 'Amis'
+        name: 'Test'
     },
     {
         id: 10,
-        name: 'Amis'
+        name: 'Test'
     }
 ]

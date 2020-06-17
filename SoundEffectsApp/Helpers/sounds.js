@@ -2,7 +2,7 @@ export default data = [
     {
         id: 1,
         title: "test_1",
-        categorie: "Kaamelott",
+        categorie: "Test",
         adresse: require("../Sounds/sound_1.mp3")
     },
     {

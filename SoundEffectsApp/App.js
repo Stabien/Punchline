@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Search from './Components/Search.js'
 import Historique from './Components/Historique.js'

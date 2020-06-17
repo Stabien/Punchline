@@ -12,8 +12,6 @@ class Search extends React.Component {
         Audio.setAudioModeAsync({playsInSilentModeIOS: true});
         return(
             <View style={{marginTop: 30}}>
-                <TextInput placeholder="Titre du film" style={styles.textinput}/>
-                <Button title="Rechercher" onPress={() => {}} style={{height: 50}}/>
                 <FlatList
                     data = {Sounds}
                     keyExtractor = {(item) => item.id.toString()}

@@ -1,6 +1,6 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { Audio } from 'expo-av';
+import React from 'react'
+import { StyleSheet, Text, View, Button } from 'react-native'
+import { Audio } from 'expo-av'
 import Sounds from '../Helpers/sounds.js'
 
 class AudioPlayer extends React.Component {

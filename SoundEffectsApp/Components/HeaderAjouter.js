@@ -11,7 +11,7 @@ class HeaderAjouter extends React.Component {
             <Stack.Navigator initialRouteName="Ajouter">
                 <Stack.Screen name="Ajouter" component={Ajouter}/>
             </Stack.Navigator>
-        )
+        );
     }
 }
 
