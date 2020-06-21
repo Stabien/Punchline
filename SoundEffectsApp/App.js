@@ -1,8 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Search from './Components/Search.js'
-import Historique from './Components/Historique.js'
-import Chrono from './Components/Chrono.js'
 import DisplayCategories from './Components/DisplayCategories.js'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'

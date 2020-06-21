@@ -34,10 +34,10 @@ class Home extends React.Component {
 
 const styles = StyleSheet.create({
     icon: {
-        width: 30,
         borderWidth: 1,
-        borderColor: 'black',
-        borderRadius: 5
+        color: 'white',
+        borderRadius: 5,
+        marginRight: 20
     }
 });
 

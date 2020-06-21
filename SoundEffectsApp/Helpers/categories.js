@@ -1,42 +1,22 @@
 export default data = [
     {
         id: 1,
-        name: 'Test'
+        name: 'Films'
     },
     {
         id: 2,
-        name: 'Test'
+        name: 'Séries'
     },
     {
         id: 3,
-        name: 'Test'
+        name: 'Rires'
     },
     {
         id: 4,
-        name: 'Test'
+        name: 'Memes'
     },
     {
         id: 5,
-        name: 'Test'
-    },
-    {
-        id: 6,
-        name: 'Test'
-    },
-    {
-        id: 7,
-        name: 'Test'
-    },
-    {
-        id: 8,
-        name: 'Test'
-    },
-    {
-        id: 9,
-        name: 'Test'
-    },
-    {
-        id: 10,
-        name: 'Test'
+        name: 'Politiques'
     }
 ]
