@@ -6,7 +6,7 @@ import AudioPlayer from './AudioPlayer.js'
 
 class Search extends React.Component {
     render() {
-        const numColumns = 2;
+        const numColumns = 1;
         const name = this.props.route.params.categorie;
 
         Audio.setAudioModeAsync({playsInSilentModeIOS: true});

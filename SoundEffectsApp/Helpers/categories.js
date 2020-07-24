@@ -1,11 +1,11 @@
 export default data = [
     {
         id: 1,
-        name: 'Films'
+        name: 'Films / Séries'
     },
     {
         id: 2,
-        name: 'Séries'
+        name: 'Internet'
     },
     {
         id: 3,
@@ -13,10 +13,10 @@ export default data = [
     },
     {
         id: 4,
-        name: 'Memes'
+        name: 'Télévision'
     },
     {
         id: 5,
-        name: 'Politiques'
+        name: 'Bruitages'
     }
 ]

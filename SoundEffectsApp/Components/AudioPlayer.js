@@ -27,15 +27,15 @@ class AudioPlayer extends React.Component {
 
 const styles = StyleSheet.create({
     button: {
-        marginBottom: 5,
-        marginTop: 5,
+        marginBottom: 10,
+        marginTop: 10,
         marginLeft: 'auto',
         marginRight: 'auto',
-        height: 40,
-        width: 130,
+        height: 80,
+        width: 250,
         backgroundColor: "#43BCFF",
-        borderRadius: 15,
-        justifyContent: 'center'
+        borderRadius: 25,
+        justifyContent: 'center',
     }
 });
 
